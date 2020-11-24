@@ -1,0 +1,26 @@
+diff --git a/themes/contrib/claro/claro.info.yml b/themes/contrib/claro/claro.info.yml
+index ee19ca4..f51ac45 100644
+--- a/themes/contrib/claro/claro.info.yml
++++ b/themes/contrib/claro/claro.info.yml
+@@ -41,9 +41,9 @@ libraries-override:
+       component:
+         /core/themes/stable/css/core/dropbutton/dropbutton.css: css/dist/components/dropbutton.css
+ 
+-  core/drupal.tabledrag:
+-    js:
+-      misc/tabledrag.js: js/tabledrag.js
++  # core/drupal.tabledrag:
++  #   js:
++  #     misc/tabledrag.js: js/tabledrag.js
+ 
+   core/drupal.vertical-tabs:
+     css:
+@@ -76,7 +76,7 @@ libraries-override:
+         css/components/tabs.css: false
+         css/components/pager.css: false
+         css/components/tableselect.css: css/dist/components/tableselect.css
+-        css/components/tabledrag.css: false
++        #css/components/tabledrag.css: false
+         css/components/collapse-processed.css: false
+ 
+   classy/dropbutton:

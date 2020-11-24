@@ -1,0 +1,7 @@
+field.widget.settings.upanup_date_recur_widget_upanup:
+  type: mapping
+  label: 'Upanup widget settings'
+  mapping:
+    interpreter:
+      type: string
+      label: 'Interpreter instance ID'

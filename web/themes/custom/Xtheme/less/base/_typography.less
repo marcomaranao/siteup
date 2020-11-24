@@ -1,0 +1,119 @@
+/* [ BLOCKQUOTE ] ----------*/
+blockquote {
+  border-left: 2px solid @grey;
+  font-style: italic;
+  margin: 0 0 2rem 0;
+  padding: 0.5rem 0rem 0.5rem 1rem;
+  position: relative;
+  > *:last-child {margin-bottom: 0;}
+}
+
+/* [ LIST ] ----------*/
+ul,
+ol {
+  margin-top: 0;
+  padding-left:1.25rem;
+  ul,
+  ol {margin-bottom: 0;}
+  &[type="1"] {list-style-type: decimal;}
+  &[type="a"] {list-style-type: lower-alpha;}
+  &[type="i"] {list-style-type: lower-roman;}
+  li {margin-bottom: 1rem;}
+}
+ul {list-style-type:disc;}
+ol {list-style-type:decimal;}
+
+/* [ LINKS ] ----------*/
+a {
+  color:@link;
+  font-weight: @bold;
+  text-decoration:none;
+  outline:none;
+  .transition(color 0.2s ease-in-out);
+  &:hover {
+    color: @link--hover;
+    text-decoration: underline;
+    &:focus {outline: none;}
+  }
+  &:focus {
+    outline: none;
+    text-decoration: none;
+    outline: 2px dashed @focus;
+    outline-offset: 4px;
+  }
+  &:active {
+    color: @link--active;
+    text-decoration: underline;
+    &:focus {outline: none;}
+  }
+  &[target="_blank"] {
+    &:after {
+      content:'\f14c';
+      .font-icon;
+      font-weight: @normal;
+      padding-left: 0.25rem;
+    }
+  }
+}
+
+/* [ HEADINGS ] ----------*/
+h1, .h1 {
+  font-size: 2rem;
+  font-weight: @bold;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+h2, .h2 {
+  font-size: 1.75rem;
+  font-weight: @bold;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+h3, .h3 {
+  font-size: 1.5rem;
+  font-weight: @bold;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+h4, .h4 {
+  font-size: 1.25rem;
+  font-weight: @normal;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+h5, .h5 {
+  font-size: 1.125rem;
+  font-weight: @bold;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+h6, .h6 {
+  font-size: 1rem;
+  font-weight: @bold;
+  .line-height-crop;
+  margin-bottom: 1.75rem;
+  margin-top: 0;
+}
+.a-heading--simple {
+  font-family: @body;
+  font-size: 1rem;
+  font-weight: @normal;
+  margin: 0;
+}
+
+p {line-height: 2;}
+p, ul, ol {
+  max-width: @line-width;
+  &.menu,
+  &.m-menu {max-width: none;}
+}
+p, ul, ol, table {margin:0 0 2rem;}
+
+hr {border-color: @border;}
+
+#skip-link {margin:0;}

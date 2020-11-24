@@ -1,0 +1,58 @@
+{#
+/**
+ * @file
+ * Template file for run report.
+ *
+ * Available variables:
+ * - from: String containing information about location, browser and connection.
+ * - kpis: Associative array containing key performance indicator information:
+ *   - kpi: Label of KPI
+ *   - value: Value of KPI
+ * - url: String containing url that was tested.
+ * - view_button: Button for viewing more details.
+ */
+#}
+
+{% if kpis['#threshold_violations'] is defined %}
+<div class="messages messages--warning">
+  {{ 'Performance Budget Violations:'|t }}
+  <ol>
+  {% for violation in kpis['#threshold_violations'] %}
+    <li>
+      <strong>{{ violation.kpi }}</strong>
+    {% if violation.type == 'maximum' %}
+      {{ violation.actual }} > {{ violation.threshold }}
+    {% elseif violation.type == 'minimum' %}
+      {{ violation.actual }} < {{ violation.threshold }}
+    {% else %}
+      {{ 'Invalid violation type:'|t }} {{ violation.type }}
+    {% endif %}
+    </li>
+  {% endfor %}
+  </ol>
+</div>
+{% endif %}
+
+<h4>{{ url }}</strong></h4>
+
+<dl>
+  <dt><strong>{{ 'From:'|t }}</strong></dt>
+  <dd>{{ from }}</dd>
+
+{% for group, group_details in kpis|without('#threshold_violations') %}
+  <dt><strong><u>{{ group }}</u></strong></dt>
+  <dd>
+    {% for average, average_details in group_details %}
+      {% for view, view_details in average_details %}
+        <strong>{{ average }}/{{ view }}:</strong><br>
+        {% for kpi, value in view_details %}
+          - {{ kpi }}: {{ value }}<br>
+        {% endfor %}
+      {% endfor %}
+    {% endfor %}
+  </dd>
+{% endfor %}
+</dl>
+{% if view_button %}
+  {{ view_button }}
+{% endif %}

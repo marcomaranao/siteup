@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Template file for historical report.
+ */
+#}
+
+{{ attach_library('performance_budget/chartjs') }}
+{{ attach_library('performance_budget/chartjs-plugin-trendline') }}
+{{ attach_library('performance_budget/chartjs-plugin-zoom') }}
+{{ attach_library('performance_budget/request-table') }}
+
+{% if chartjs_option is not empty %}
+<script>
+function wptRetrieveChartJsOptions(group, url) {
+  return {{ chartjs_option|raw }};
+}
+</script>
+{% endif %}
+
+<div{{ attributes }}>
+  <div class="wpt-kpi-chart" id="wpt_kpi_chart"></div>
+  {{ first_view_request_summary }}
+  {{ repeat_view_request_summary }}
+</div>

@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Hooks for Date Recur Modular Widget Framework.
+ */
+
+declare(strict_types = 1);
+
+/**
+ * Implements hook_theme().
+ */
+function upanup_date_recur_widget_theme(array $existing, string $type, string $theme, string $path): array {
+  return [
+    'upanup_date_recur_widget_upanup_widget' => [
+      'render element' => 'widget',
+    ],
+    'upanup_date_recur_widget_upanup_widget_modal_form' => [
+      'render element' => 'form',
+    ],
+    'upanup_date_recur_widget_upanup_widget_modal_form_ends' => [
+      'render element' => 'form',
+    ],
+  ];
+}
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * HOOK: 'upanup_date_recur_widget_upanup_widget'.
+ */
+function template_preprocess_upanup_date_recur_widget_upanup_widget(array &$variables): void {
+  $variables['attributes']['class'][] = 'upanup-date-recur-widget-upanup-widget';
+  $variables['#attached']['library'][] = 'upanup_date_recur_widget/upanup_date_recur_widget_upanup_widget';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
+ * HOOK: 'upanup_date_recur_widget_widget_modal_form'.
+ */
+function template_preprocess_upanup_date_recur_widget_upanup_widget_modal_form(array &$variables): void {
+  $variables['attributes']['class'][] = 'upanup-date-recur-widget-upanup-modal';
+  // Wait until \Drupal\Core\Render\Element\Checkboxes::processCheckboxes is
+  // run so attributes are not replicated to children.
+  $variables['form']['weekdays']['#attributes']['class'][] = 'container-inline';
+  $variables['form']['weekdays']['#attributes']['class'][] = 'weekdays';
+}

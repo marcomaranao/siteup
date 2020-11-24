@@ -1,0 +1,54 @@
+{% include '/themes/custom/xtheme/inc/header.twig' %}
+<main role="main" class="t-main">
+	<a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+	{% if node.field_carousel is not empty %}{{ page.carousel }}{% endif %}
+	{% if node.field_categorized_tiles is not empty %}
+		<div class="o-categorized-tiles">
+			<div class="t-container">
+				<header class="o-categorized-tiles__header">
+					{% if node.field_categorized_tiles_heading.value %}<h2 class="o-categorized-tiles__heading">{{ node.field_categorized_tiles_heading.value }}</h2>{% endif %}
+					{% if node.field_categorized_tiles_intro.value %}<p class="o-categorized-tiles__intro">{{ node.field_categorized_tiles_intro.value }}</p>{% endif %}
+					<label for="category-list" class="visually-hidden">Filter tiles by category</label>
+					<select class="o-categorized-tiles__categories--mobile" id="category-list">
+						{% if node.field_categorized_tiles[0] %}
+						{% for key, item in node.field_categorized_tiles %}
+						<option data-category="{{ item.entity.field_category.value }}" value="{{ item.entity.field_category.value }}">{{ item.entity.field_category.value }}</option>
+						{% endfor %}
+						{% endif %}
+					</select>
+					<ul class="o-categorized-tiles__categories a-category-list">
+						{% if node.field_categorized_tiles[0] %}
+						{% for key, item in node.field_categorized_tiles %}
+						<li class="a-category-list__item"><button class="a-category-list__button a-button" data-category="{{ item.entity.field_category.value }}">{{ item.entity.field_category.value }}</button></li>
+						{% endfor %}
+						{% endif %}
+					</ul>
+				</header>
+				<div class="o-categorized-tiles__content">
+					{% if node.field_categorized_tiles[0] %}
+					{% for key, item in node.field_categorized_tiles %}
+					<div class="o-categorized-tiles__section" data-category="{{ item.entity.field_category.value }}">
+						<div class="o-grid">
+						{% for key, item in item.entity.field_tile %}
+							<a href="{{ item.entity.field_link.0.url }}" class="a-tile">
+								<span class="a-tile__icon {{ item.entity.field_icon.value }}" aria-hidden="true"></span>
+								<span class="a-tile__text">{{ item.entity.field_link.0.title }}</span>
+							</a>
+						{% endfor %}
+						</div>
+					</div>
+					{% endfor %}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+  <div class="t-container">
+		<div class="t-content t-content--fullwidth">
+			{{ page.highlighted }}
+			{{ page.help }}
+			{{ page.content }}
+		</div>
+  </div>
+</main>
+{% include '/themes/custom/xtheme/inc/footer.twig' %}

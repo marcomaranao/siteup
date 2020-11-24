@@ -1,0 +1,61 @@
+web_page_archive.capture_utility.pb_wpt_capture:
+  type: mapping
+  label: 'Web page test capture utility'
+  mapping:
+    api:
+      type: mapping
+      label: 'API key management'
+      mapping:
+        hostname:
+          type: string
+          label: 'API hostname'
+        storage_method:
+          type: string
+          label: 'API key storage method'
+        key_module:
+          type: string
+          label: 'Key (from key module)'
+        key_plaintext:
+          type: string
+          label: 'Key (plaintext)'
+    autogen:
+      type: mapping
+      label: 'Autogenerate historical report settings'
+      mapping:
+        enabled:
+          type: boolean
+          label: Enabled
+        date_range:
+          type: string
+          label: 'Date range'
+        date_range_start:
+          type: string
+          label: 'Date range start'
+        date_range_end:
+          type: string
+          label: 'Date range end'
+    kpi_groups:
+      type: sequence
+      label: 'KPI Groups'
+      sequence:
+        type: mapping
+        mapping:
+          target_id:
+            type: string
+            label: 'Entity ID'
+    chartjs_option:
+      type: string
+      label: 'Chart.js Options'
+    wpa_notification_utility:
+      type: sequence
+      sequence:
+        type: string
+    wpa_notification_utility_details:
+      type: ignore
+
+web_page_archive.pb_wpt_capture.settings:
+  type: config_object
+  label: 'Web Page Test Capture Utility settings'
+  mapping:
+    defaults:
+      type: web_page_archive.capture_utility.pb_wpt_capture

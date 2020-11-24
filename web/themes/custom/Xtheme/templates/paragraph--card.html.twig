@@ -1,0 +1,16 @@
+{% block paragraph %}
+  {% block content %}
+  <div class="m-card">
+    <header class="m-card__header"><h2 class="m-card__title">{{ content.field_card_title.0 }}</h2></header>
+    {% if content.field_image.0 %}
+    <div class="m-card__image">{{ content.field_image.0 }}</div>
+    {% endif %}
+    <div class="m-card__content-wrapper">
+      <p class="m-card__content">{{ content.field_card_content.0 }}</p>
+      {% if content.field_link[0]['#url'] %}
+      <div class="m-card__footer"><a href="{{ content.field_link[0]['#url'] }}" class="m-card__link a-button">{{ content.field_link[0]['#title'] }}</a></div>
+      {% endif %}
+    </div>
+  </div>
+  {% endblock content %}
+{% endblock paragraph %}

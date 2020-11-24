@@ -1,0 +1,4 @@
+upanup_date_recur_widget use upanup form:
+  title: 'Use Upanup modal form'
+  description: 'Whether users can use the Upanup modal form.'
+  

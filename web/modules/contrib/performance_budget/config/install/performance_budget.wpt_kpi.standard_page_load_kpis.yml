@@ -1,0 +1,76 @@
+uuid: 7459acef-5488-439f-aefa-020361c91062
+langcode: en
+status: true
+dependencies: {  }
+id: standard_page_load_kpis
+label: 'Standard Page Load KPIs'
+kpis:
+  average:
+    firstView:
+      loadTime: 1
+      fullyLoaded: 1
+      TTFB: 1
+      domElements: 0
+      SpeedIndex: 0
+      render: 1
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0
+    repeatView:
+      loadTime: 0
+      fullyLoaded: 0
+      TTFB: 0
+      domElements: 0
+      SpeedIndex: 0
+      render: 0
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0
+  median:
+    firstView:
+      loadTime: 0
+      fullyLoaded: 0
+      TTFB: 0
+      domElements: 0
+      SpeedIndex: 0
+      render: 0
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0
+    repeatView:
+      loadTime: 0
+      fullyLoaded: 0
+      TTFB: 0
+      domElements: 0
+      SpeedIndex: 0
+      render: 0
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0
+  standardDeviation:
+    firstView:
+      loadTime: 0
+      fullyLoaded: 0
+      TTFB: 0
+      domElements: 0
+      SpeedIndex: 0
+      render: 0
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0
+    repeatView:
+      loadTime: 0
+      fullyLoaded: 0
+      TTFB: 0
+      domElements: 0
+      SpeedIndex: 0
+      render: 0
+      requests: 0
+      responses_200: 0
+      responses_404: 0
+      responses_other: 0

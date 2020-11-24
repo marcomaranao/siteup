@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Template file for detailed run report.
+ *
+ * Available variables:
+ * - requests: Associative array containing request information.
+ *   - kpi: Label of KPI
+ *   - value: Value of KPI
+ * - url: String containing url that was tested.
+ */
+#}
+
+{{ attach_library('performance_budget/request-table') }}
+{{ attach_library('performance_budget/chartjs-gantt') }}
+{{ attach_library('performance_budget/chartjs-plugin-gantt') }}
+{{ attach_library('performance_budget/chartjs-plugin-zoom') }}
+
+<div{{ attributes }}>
+  <h4>{{ url }}</strong></h4>
+  {{ tables }}
+</div>

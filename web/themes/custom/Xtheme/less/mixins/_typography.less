@@ -1,0 +1,30 @@
+@font: 'Roboto Slab', serif;
+@body: 'Roboto', sans-serif;
+
+@font-size-base:16px;
+@line-height-base:1.5;
+@line-height-computed:floor((@font-size-base * @line-height-base)); // ~24px
+
+@light:300;
+@normal:400;
+@semibold:600;
+@bold:700;
+
+@line-width:37.875rem; // ~80 characters (a decent a11y line length)
+
+.text-left   {text-align: left;}
+.text-center {text-align: center;}
+.text-right  {text-align: right;}
+
+.font-icon {font-family: 'Font Awesome 5 Pro';}
+
+// https://medium.com/codyhouse/line-height-crop-a-simple-css-formula-to-remove-top-space-from-your-text-9c3de06d7c6f
+.line-height-crop(@line-height:1.5) {
+  &::before {
+    content: '';
+    display: block;
+    height: 0;
+    margin-top: calc((0.8 - @line-height) * 0.5em);
+    width: 0;
+  }
+}

@@ -1,0 +1,40 @@
+{% if page.alerts %}
+<div class="o-alerts-banner" id="alerts-banner" aria-labelledby="alerts-heading">
+  <header class="o-alerts-banner__header">
+    <div class="t-container">
+      <h2 class="o-alerts-banner__heading" id="alerts-heading">Alerts</h2>
+      <div class="o-alerts-banner__controls-wrapper">
+        <div class="o-alerts-banner__controls a-carousel-controls a-carousel-controls--hidden">
+          <button class="a-carousel-control a-carousel-control--previous far fa-angle-left" tabindex="0"></button>
+          <ul class="a-carousel-nav"></ul>
+          <button class="a-carousel-control a-carousel-control--next far fa-angle-right" tabindex="0"></button>
+        </div>
+        <button class="a-alerts-trigger a-button" aria-controls="alerts-carousel" title="Collapse the Alerts carousel" aria-expanded="true">Collapse</button>
+      </div>
+    </div>
+  </header>
+  <div class="o-alerts-banner__carousel-wrapper" id="alerts-carousel" aria-hidden="false">
+    <div class="t-container">
+      <div class="o-alerts-banner__carousel-slides">{{ page.alerts }}</div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<header id="header" class="t-header" role="banner">
+  <div class="t-header__row t-header__row--top">
+    <div class="t-container">
+      <button class="a-menu-trigger a-menu-trigger--header a-button" aria-haspopup="true" aria-expanded="false" aria-controls="header-menu">Menu</button>
+      <div class="m-menu-wrapper m-menu-wrapper--header" id="header-menu">{{ page.menu__header }}</div>
+      <div class="m-search-form">{{ page.search }}</div>
+    </div>
+  </div>
+  <div class="t-header__row t-header__row--bottom">
+    <div class="t-container">
+      <div class="a-logo">{{ page.logo }}</div>
+      <div class="t-header__menu-wrapper" id="main-menu-wrapper">
+        <button class="a-menu-trigger a-button" aria-haspopup="true" aria-expanded="false" aria-controls="main-menu">Menu</button>
+        <div class="m-menu-wrapper m-menu-wrapper--main" id="main-menu">{{ page.menu }}</div>
+      </div>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,28 @@
+.o-categorized-tiles {
+  background-color: @grey--light;
+  clear: both;
+  display: block;
+  padding: 2rem 0 1rem 0;
+  width: 100%;
+  &__header {
+    clear: both;
+    display: block;
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+  &__categories {
+    &--mobile {display: none;}
+  }
+  &__section {
+    display: none;
+    &--active {display: block;}
+  }
+}
+@media only screen and (max-width:768px) {
+  .o-categorized-tiles {
+    &__categories {
+      display: none;
+      &--mobile {display: block;}
+    }
+  }
+}

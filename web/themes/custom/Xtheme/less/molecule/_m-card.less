@@ -1,0 +1,37 @@
+.m-card {
+  border: 1px solid @border--light;
+  .flex-display;
+  .flex-direction(column);
+  &__header {padding: 1rem;}
+  &__content {
+    margin: 0;
+    &-wrapper {
+      .flex-display;
+      .flex-direction(column);
+      .align-items(flex-start);
+      .justify-content(space-between);
+      .flex(1 0 auto);
+      padding: 0 1rem 1rem 1rem;
+    }
+  }
+  &__footer {
+    padding: 1rem 0 0 0;
+  }
+  &__title {margin: 0;}
+  &__image {
+    display: block;
+    .flex(0 0 auto);
+    order: -1;
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+  &--header-first {
+    .m-card {
+      &__image {order: initial;}
+      &__content-wrapper {padding: 1rem;}
+    }
+  }
+}

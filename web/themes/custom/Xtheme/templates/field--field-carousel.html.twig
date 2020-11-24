@@ -1,0 +1,26 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+    label_display == 'inline' ? 'clearfix',
+    'm-carousel',
+  ]
+%}
+{% if items|length > 1 %}
+  <div{{ attributes.addClass(classes, 'field__items m-carousel--multiple') }}>
+    <div class="m-carousel__controls a-carousel-controls">
+      <button class="a-carousel-control a-carousel-control--previous far fa-angle-left"></button>
+      <ul class="a-carousel-nav">
+      {% for item in items %}<li class="a-carousel-nav__item"><button class="a-carousel-nav__item-button"></button></li>{% endfor %}
+      </ul>
+      <button class="a-carousel-control a-carousel-control--next far fa-angle-right"></button>
+    </div>
+    <div class="m-carousel__slide-wrapper">{% for item in items %}{{ item.content }}{% endfor %}</div>
+  </div>
+{% else %}
+  <div{{ attributes.addClass(classes) }}>
+    {% for item in items %}{{ item.content }}{% endfor %}
+  </div>
+{% endif %}

@@ -1,0 +1,51 @@
+.a-button,
+.button,
+.cc_btn {
+  appearance: none;
+  background-color: @white;
+  border: 2px solid @link;
+  .border-radius(0rem);
+  color: @link;
+  display: inline-block;
+  font-family: @body;
+  font-size: 1rem;
+  font-weight: @semibold;
+  padding: 0.5rem 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  .transition(~"color 0.2s, background-color 0.2s, border-color 0.2s, transform 0.2s" ease-in-out);
+  &:hover {
+    background-color: @link;
+    color: @white;
+    text-decoration: none;
+    &:focus {outline: none;}
+  }
+  &:focus {
+    outline: 2px dashed @focus;
+    outline-offset: 0.235rem;
+    text-decoration: none;
+  }
+  &:active {
+    background-color: @link--active;
+    border-color: @link--active;
+    color: @white;
+    text-decoration: none;
+    &:focus {outline: none;}
+  }
+  &[disabled],
+  &--disabled {
+    background-color: @grey;
+    border-color: @grey;
+    color: @text-color;
+    cursor: default;
+    &:hover,
+    &:active {
+      background-color: @grey;
+      border-color: @grey;
+      color: @text-color;
+      cursor: default;
+      text-decoration: none;
+    }
+  }
+  &__icon {margin-left: 0.47rem;}
+}

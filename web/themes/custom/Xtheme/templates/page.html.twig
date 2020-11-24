@@ -1,0 +1,33 @@
+{% include '/themes/custom/xtheme/inc/header.twig' %} 
+{% if node.field_hide_section_navigation.0.value == 1 %}
+	{% set sidebarClass = 't-sidebar t-sidebar--no-nav' %}
+	{% set contentClass = 't-content t-content--fullwidth' %}
+{% else %}
+	{% set sidebarClass = 't-sidebar' %}
+	{% set contentClass = 't-content' %}
+{% endif %}
+<main role="main" class="t-main">
+	{% if node.field_hero is not empty %}
+	<figure class="a-hero">
+		{% set hero = node.field_hero.entity.field_media_image.entity.fileuri %}
+		{% set hero_alt = node.field_hero.entity.field_media_image.alt %}
+		<img src="{{ hero|image_style('16_5') }}" alt="{{ hero_alt }}"/>
+		{% if node.field_caption is not empty %}<figcaption class="a-hero__caption"><div class="t-container">{{ node.field_caption.value }}</div></figcaption>{% endif %}
+	</figure>
+	{% endif %}
+  <div class="t-container">
+    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+		{% if page.sidebar %}
+		<div class="{{ sidebarClass }}">
+			<aside class="t-sidebar__wrapper" role="complementary">{{ page.sidebar }}</aside>
+		</div>
+		{% endif %}
+		<div class="{{ contentClass }}">
+			{{ page.highlighted }}
+			{{ page.help }}
+			{{ page.content }}
+			{{ page.breadcrumbs }}
+		</div>
+  </div>
+</main>
+{% include '/themes/custom/xtheme/inc/footer.twig' %}

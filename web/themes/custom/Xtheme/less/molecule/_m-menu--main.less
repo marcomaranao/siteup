@@ -1,0 +1,160 @@
+.m-menu-wrapper--main nav {
+  // GENERAL
+  .m-menu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .m-menu__item {
+      margin: 0;
+      position: relative;
+      &--active-trail {
+        > .m-menu__item-link-wrapper {
+          color: @link;
+          font-weight: @bold;
+          > .a-menu-link-wrapper__link {
+            &:hover {
+              color: @link--hover;
+              text-decoration: underline;
+            }
+            &:active {
+              color: @link--active;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+  // SPECIFIC
+  // First
+  > .m-menu {
+    .flex-display;
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .align-items(center);
+    .justify-content(flex-end);
+    > .m-menu__item {
+      margin: 0 0 0 2rem;
+      > .m-menu__item-link-wrapper {
+        font-size: 1.25rem;
+        > .a-menu-link-wrapper__link.is-active {
+          padding-left: 0;
+          &:before {display: none;}
+        }
+      }
+      // Second
+      > .m-menu {
+        background-color: @white;
+        border: 1px solid @border--light;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 20rem;
+        > .m-menu__item {
+          border-bottom: 1px solid @border--light;
+          &:last-child {border-bottom: 0;}
+          // Third
+          > .m-menu {
+            background-color: @white;
+            border: 1px solid @border--light;
+            left: 100%;
+            position: absolute;
+            top: -1px;
+            width: 20rem;
+            > .m-menu__item {
+              border-bottom: 1px solid @border--light;
+              &:last-child {border-bottom: 0;}
+              .m-menu {display: none;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:1024px) {
+  .m-menu-wrapper--main {
+    background-color: @white;
+    border: 0;
+    border-top: 1px solid @border--light;
+    display: none;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    nav {
+      // GENERAL
+      .m-menu {
+        border-bottom: 1px solid @border;
+        max-width: 100%;
+        width: 100%;
+        .m-menu__item {
+          width: 100%;
+          &:last-child > .m-menu__item-link-wrapper {border-bottom: 0;}
+          &-link-wrapper {
+            border-bottom: 1px solid @border;
+            display: block;
+            position: relative;
+            padding: 0.5rem 3rem 0.5rem 2rem;
+          }
+        }
+      }
+      // SPECIFIC
+      // First
+      > .m-menu {
+        display: block;
+        max-width: 100%;
+        > .m-menu__item {
+          margin: 0;
+          > .m-menu__item-link-wrapper > .a-menu-link-wrapper__link.is-active:before {display: inline-block;}
+          // Second
+          > .m-menu {
+            background-color: transparent;
+            border: 0;
+            border-bottom: 1px solid @border;
+            left: auto;
+            position: relative;
+            right: auto;
+            top: auto;
+            width: 100%;
+            > .m-menu__item {
+              border-bottom: 0;
+              > .m-menu__item-link-wrapper {padding-left: 2rem;}
+              // Third
+              > .m-menu {
+                background-color: transparent;
+                border: 0;
+                border-bottom: 1px solid @border;
+                left: auto;
+                position: relative;
+                right: auto;
+                top: auto;
+                width: 100%;
+                > .m-menu__item {
+                  border-bottom: 0;
+                  > .m-menu__item-link-wrapper {padding-left: 3rem;}
+                  // Fourth
+                  > .m-menu {
+                    > .m-menu__item {
+                      > .m-menu__item-link-wrapper {padding-left: 4rem;}
+                      // Fifth
+                      > .m-menu {
+                        > .m-menu__item {
+                          > .m-menu__item-link-wrapper {padding-left: 5rem;}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width:768px) {
+  .m-menu-wrapper--main nav .m-menu .m-menu__item-link-wrapper {padding: 0.5rem 3rem 0.5rem 1.25rem;}
+}

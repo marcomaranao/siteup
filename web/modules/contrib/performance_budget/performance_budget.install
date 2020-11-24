@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Install commands for performance_budget.
+ */
+
+/**
+ * Issue 3154062: The Web Page Test KPI Group entity type needs to be installed.
+ */
+function performance_budget_update_8001() {
+  $change_list = \Drupal::entityDefinitionUpdateManager()->getChangeSummary();
+  if (!empty($change_list['wpt_kpi'])) {
+    $entityType = \Drupal::entityTypeManager()->getDefinition('wpt_kpi');
+    \Drupal::entityDefinitionUpdateManager()->installEntityType($entityType);
+  }
+}

@@ -1,0 +1,67 @@
+table {
+  width: 100%;
+  thead {
+    border: 0;
+  }
+  tbody {
+    border: 0;
+  }
+  tfoot {
+    border: 0;
+  }
+  tr {
+    border: 0;
+    &:nth-child(even) {background-color: @grey--light;}
+  }
+  th {
+    border: 0;
+    background: @black;
+    color: @white;
+    font-weight: @normal;
+    padding: 1rem 1.5rem;
+    text-align-last: left;
+  }
+  td {
+    border: 0;
+    color: @text-color;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* [ SCROLLABLE ] ----------*/
+//Create a visual cue, dropshdow, to show the whole table is not visible
+.scrollable {
+  float: left;
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+  table {margin: 0;}
+}// .scrollable
+/* This is the element whose content will be scrolled if necessary */
+.scrollable > div {
+    overflow-x:auto;
+}
+//Style scrollbar so that it's always visible
+.scrollable > div::-webkit-scrollbar {
+    height:12px;
+}
+.scrollable > div::-webkit-scrollbar-track {
+    box-shadow:0 0 2px rgba(0,0,0,0.15) inset;
+    background:#f0f0f0;
+}
+.scrollable > div::-webkit-scrollbar-thumb {
+    border-radius:6px;
+    background:#ccc;
+}
+.scrollable.has-scroll:after {
+  position:absolute;
+  top:0;
+  left:100%;
+  width:50px;
+  height:100%;
+  border-radius:10px 0 0 10px / 50% 0 0 50%;
+  overflow: hidden;
+  box-shadow:-5px 0 10px rgba(0, 0, 0, 0.25);
+  content:'';
+}

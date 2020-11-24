@@ -1,0 +1,24 @@
+.tabs ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  .clearfix;
+  > li {
+    display: inline-block;
+    > a {
+      .a-button;
+      margin: 0 0.5rem 0.5rem 0;
+    }
+    &.is-active > a {
+      &,
+      &:hover,
+      &:focus,
+      &:active {
+        color: @grey;
+        background-color: @white;
+        border: 1px solid @border;
+        cursor: default;
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+legend {
+  border: 0;
+  color: @black;
+  display: block;
+  font-size: 1rem;
+  font-weight: @bold;
+  line-height: inherit;
+  margin-bottom: @line-height-computed;
+  padding: 0;
+  width: 100%;
+}
+label {
+  display: inline-block;
+  font-weight: @bold;
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+}
+input[type="search"] {.box-sizing(border-box);}
+input[type="file"] {display: block;}
+select[multiple],
+select[size] {
+  height: auto;
+}
+.form-item {
+  max-width: 100%;
+  label,
+  legend {
+    clear: both;
+    color:@text-color;
+    display: block;
+    font-weight: @bold;
+    margin: 0 0 0.5rem 0;
+  }
+}
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="decimal"],
+input[type="tel"],
+input[type="date"],
+input[type="search"],
+input[type="time"],
+input[type="number"],
+input[type="url"],
+select,
+textarea {
+  -webkit-appearance:none;
+  -moz-appearance: none;
+  border: 2px solid @border;
+  .border-radius(0rem);
+  font-family: @body;
+  padding: 1rem 1.5rem;
+  max-width: 100%;
+  &:focus {
+    border-color: @focus;
+    outline: 2px solid @focus;
+  }
+}
+input[type="submit"],
+button[type="submit"] {
+  -webkit-appearance:none;
+  -moz-appearance: none;
+}
+select {
+  background:url(../images/select-bg.png),@white;
+  background-position: calc(100% - 1.5rem) 50%;
+  background-repeat: no-repeat;
+  background-size: 1rem;
+  line-height: normal;
+  padding: 1rem 3rem 1rem 1.5rem;
+}
+.form-type-checkbox {
+  display: block;
+  margin: 0 !important;
+  position: relative;
+  width: 100%;
+  label.option {
+    background-color: transparent;
+    color:@text-color;
+    display: inline-block;
+    font-weight: @normal;
+    margin-bottom:0;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    position:relative;
+    &:after {
+      color:@text-color;
+      content:"\f0c8";
+      display:inline-block;
+      .font-icon;
+      font-size: 1.25rem;
+      font-weight: @normal;
+      left: 0.75rem;
+      position:absolute;
+      top: 0.35rem;
+    }
+  }
+}
+select::-ms-expand {display: none;}
+input[type=checkbox] {
+  appearance: none;
+  border: 0;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0;
+  &:focus ~ label.option {
+    outline: 2px dashed @focus;
+  }
+  &:hover, &:active {
+    &:focus {outline: none;}
+  }
+  &:checked ~ label.option {
+    &:after {
+      content:"\f14a";
+      display:inline-block;
+      .font-icon;
+      font-weight: @normal;
+      letter-spacing:5px;
+    }
+  }
+}
+.form-type-radio {
+  display: block;
+  margin: 0 !important;
+  position: relative;
+  width: 100%;
+  label.option {
+    background-color: transparent;
+    color:@text-color;
+    display: inline-block;
+    font-weight: @normal;
+    margin-bottom:0;
+    padding: 0.5rem 0.75rem 0.5rem 2.5rem;
+    position:relative;
+    &:after {
+      color:@text-color;
+      content:"\f111";
+      display:inline-block;
+      .font-icon;
+      font-size: 1.25rem;
+      font-weight: @normal;
+      left: 0.75rem;
+      position:absolute;
+      top: 0.35rem;
+    }
+  }
+}
+input[type=radio] {
+  appearance: none;
+  border: 0;
+  height: 0;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 0;
+  &:focus ~ label.option {
+    outline: 2px dashed @focus;
+  }
+  &:hover, &:active {
+    &:focus {outline: none;}
+  }
+  &:checked ~ label.option {
+    &:after {
+      content:"\f192";
+      display:inline-block;
+      .font-icon;
+      font-weight: @normal;
+      letter-spacing:5px;
+    }
+  }
+}
+button {font-family: @body;}
+.form-text {
+  .placeholder();
+  &::-ms-expand {
+    border: 0;
+    background-color: transparent;
+  }
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: @grey--light;
+    opacity: 1;
+  }
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+  textarea& {
+    height: auto;
+  }
+}
+// Search inputs in iOS
+input[type="search"] {
+  -webkit-appearance: none;
+}
+// Apply same disabled cursor tweak as for inputs
+// Some special care is needed because <label>s don't inherit their parent's `cursor`.
+// Note: Neither radios nor checkboxes can be readonly.
+input[type="radio"],
+input[type="checkbox"] {
+  &[disabled],
+  &.disabled,
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+// Help text
+// Apply to any element you wish to create light text for placement immediately
+// below a form control. Use for general help, formatting, or instructional text.
+.form-item > .description {
+  display: block; // account for any element using help-block
+  margin-top: 5px;
+  margin-bottom: 10px;
+  color: lighten(@text-color, 25%); // lighten the text some for contrast
+}
+.captcha {
+  display: block;
+  clear: both;
+}

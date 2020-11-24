@@ -1,0 +1,8 @@
+{% block paragraph %}
+  {% block content %}
+  <figure class="m-figure">
+    {% if content.field_image.0 %}{{ content.field_image.0 }}{% endif %}
+    {% if content.field_caption.0 %}<figcaption>{{ content.field_caption.0 }}</figcaption>{% endif %}
+  </figure>
+  {% endblock content %}
+{% endblock paragraph %}

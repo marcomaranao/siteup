@@ -1,0 +1,31 @@
+.o-alerts-banner {
+  &__header {
+    border-bottom: 1px solid @border;
+    padding: 0.5rem 0;
+    > .t-container {
+      .flex-display;
+      .flex-direction(row);
+      .align-items(center);
+      .justify-content(space-between);
+    }
+  }
+  &__controls-wrapper {
+    .flex-display;
+    .flex-direction(row);
+    .flex-wrap(nowrap);
+    .align-items(center);
+    .justify-content(flex-end);
+  }
+  &__heading {
+    margin: 0 1rem 0 0;
+    &:before {display: none;}
+  }
+  &__carousel-wrapper {
+    padding: 2rem 0;
+  }
+  .views-row > span {
+    display: inline-block;
+    margin: 0 1rem 1rem 0;
+    .views-label {font-weight: @bold;}
+  }
+}

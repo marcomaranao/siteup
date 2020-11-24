@@ -1,0 +1,17 @@
+upanup_date_recur_widget_upanup_widget:
+  css:
+    theme:
+      css/upanup-date-recur-widget-upanup-widget.css: {}
+  js:
+    js/upanup-date-recur-widget-upanup-widget.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/drupal
+    - core/drupalSettings
+    - core/drupal.form
+
+upanup_date_recur_widget_upanup_widget_modal_form:
+  css:
+    theme:
+      css/upanup-date-recur-widget-upanup-widget-modal-form.css: {}

@@ -1,0 +1,13 @@
+name: Upanup Date Recur Widget 
+description: This is a modified version that contains only an 'Upanup' widget, which is based on the Sierra widget.
+type: module
+core: 8.x
+php: 7.1
+package: Field types
+dependencies:
+  - date_recur:date_recur (>=8.x-2.x)
+
+# Information added by Drupal.org packaging script on 2019-08-23
+version: '8.x-1.0'
+project: 'upanup_date_recur_widget'
+datestamp: 1566554895

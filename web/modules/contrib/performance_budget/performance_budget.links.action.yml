@@ -1,0 +1,18 @@
+entity.web_page_archive.pb_wpt_history_process:
+  route_name: 'entity.web_page_archive.pb_wpt_history.process'
+  title: 'Reprocess Data'
+  appears_on:
+    - entity.web_page_archive.pb_wpt_history
+
+entity.web_page_archive.pb_wpt_history_view:
+  route_name: 'entity.web_page_archive.pb_wpt_history'
+  title: 'View Historical Report'
+  class: \Drupal\performance_budget\Plugin\Menu\LocalAction\ViewHistoricalReport
+  appears_on:
+    - entity.web_page_archive.canonical
+
+entity.wpt_kpi.add_form:
+  route_name: entity.wpt_kpi.add_form
+  title: 'Add Web Page Test KPI Group'
+  appears_on:
+    - entity.wpt_kpi.collection

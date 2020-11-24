@@ -1,0 +1,13 @@
+diff --git a/templates/cookieconsent.html.twig b/templates/cookieconsent.html.twig
+index 50185d2f5..62e1a6e1e 100644
+--- a/templates/cookieconsent.html.twig
++++ b/templates/cookieconsent.html.twig
+@@ -15,7 +15,7 @@
+  */
+ #}
+ <div class="cc_banner cc_container cc_container--open">
+-    <a href="#null" data-cc-event="click:dismiss" target="_blank" class="cc_btn cc_btn_accept_all">{{ dismiss }}</a>
++    <button data-cc-event="click:dismiss" class="cc_btn cc_btn_accept_all">{{ dismiss }}</button>
+     <p class="cc_message">{{message}} <a data-cc-if="options.link" target="{{ target }}" class="cc_more_info" href="{{ link }}">{{ learn_more }}</a></p>
+     <a class="cc_logo" target="_blank" href="http://silktide.com/cookieconsent">{{ 'Cookie Consent plugin for the EU cookie law'|t }}</a>
+ </div>

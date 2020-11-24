@@ -1,0 +1,78 @@
+web_page_archive.capture_utility.wpa_skeleton_capture:
+  type: mapping
+  label: 'Skeleton capture utility'
+  mapping:
+    width:
+      type: integer
+      label: 'Width'
+    users:
+      type: sequence
+      label: 'Users'
+      nullable: true
+      sequence:
+        type: mapping
+        mapping:
+          target_id:
+            type: integer
+            label: 'User ID'
+    wpa_notification_utility:
+      type: sequence
+      sequence:
+        type: string
+    wpa_notification_utility_details:
+      type: sequence
+      sequence:
+        type: mapping
+        mapping:
+          capture_complete_single:
+            type: web_page_archive.wpa_notify_email
+          capture_complete_all:
+            type: web_page_archive.wpa_notify_email
+
+web_page_archive.wpa_notify_email:
+  type: mapping
+  mapping:
+    enabled:
+      type: boolean
+    to:
+      type: string
+    format:
+      type: string
+    subject:
+      type: string
+    body:
+      type: string
+
+web_page_archive.wpa_skeleton_capture.settings:
+  type: config_object
+  label: 'Skeleton Capture Utility settings'
+  mapping:
+    defaults:
+      type: mapping
+      mapping:
+        width:
+          type: integer
+          label: 'Width'
+        users:
+          type: sequence
+          label: 'Users'
+          nullable: true
+          sequence:
+            type: mapping
+            mapping:
+              target_id:
+                type: integer
+                label: 'User ID'
+        wpa_notification_utility:
+          type: sequence
+          sequence:
+            type: string
+        wpa_notification_utility_details:
+          type: sequence
+          sequence:
+            type: mapping
+            mapping:
+              capture_complete_single:
+                type: web_page_archive.wpa_notify_email
+              capture_complete_all:
+                type: web_page_archive.wpa_notify_email

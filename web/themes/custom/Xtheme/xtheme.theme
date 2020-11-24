@@ -1,0 +1,71 @@
+<?php
+function xtheme_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if (($node = \Drupal::routeMatch()->getParameter('node')) && is_object($node)) {
+    $content_type = $node->bundle();
+    $suggestions[] = 'page__'.$content_type;
+  }
+}
+
+function xtheme_form_search_block_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $form['keys']['#attributes']['placeholder'] = t('Search...');
+}
+
+function xtheme_preprocess_html(&$variables) {
+  // Add path to body classes
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = ltrim($path_alias, '/');
+  $variables['attributes']['class'][] = \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+  $variables['url_path'] = \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+  if (($node = \Drupal::request()->attributes->get('node')) && is_object($node)) {
+    $variables['attributes']['class'][] = 'p-nid--' . $node->id();
+    $variables['attributes']['class'][] = 'p-type--' . $node->bundle();
+  }
+}
+
+use Drupal\file\Entity\File;
+function xtheme_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+  $form['social_icons'] = array(
+    '#type' =>  'fieldset',
+    '#title'  => 'Social media'
+  );
+  $form['social_icons']['facebook'] = array(
+    '#type' =>  'url',
+    '#title'  =>  'Facebook',
+    '#required' =>  FALSE,
+    '#default_value'  =>  theme_get_setting('facebook')
+  );
+  $form['social_icons']['twitter'] = array(
+    '#type' =>  'url',
+    '#title'  =>  'Twitter',
+    '#required' =>  FALSE,
+    '#default_value'  =>  theme_get_setting('twitter')
+  );
+  $form['social_icons']['instagram'] = array(
+    '#type' =>  'url',
+    '#title'  =>  'Instagram',
+    '#required' =>  FALSE,
+    '#default_value'  =>  theme_get_setting('instagram')
+  );
+  $form['social_icons']['linkedin'] = array(
+    '#type' =>  'url',
+    '#title'  =>  'LinkedIn',
+    '#required' =>  FALSE,
+    '#default_value'  =>  theme_get_setting('linkedin')
+  );
+}
+
+function xtheme_preprocess_page(&$variables) {
+  $facebook = theme_get_setting('facebook');
+  $twitter = theme_get_setting('twitter');
+  $instagram = theme_get_setting('instagram');
+  $linkedin = theme_get_setting('linkedin');
+  $variables['facebook'] = $facebook;
+  $variables['twitter'] = $twitter;
+  $variables['instagram'] = $instagram;
+  $variables['linkedin'] = $linkedin;
+}

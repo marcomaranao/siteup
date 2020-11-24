@@ -1,0 +1,85 @@
+performance_budget.wpt_kpi.*:
+  type: config_entity
+  label: 'Web Page Test KPI Group config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    kpis:
+      type: mapping
+      mapping:
+        average:
+          type: performance_budget.kpi_average
+        median:
+          type: performance_budget.kpi_average
+        standardDeviation:
+          type: performance_budget.kpi_average
+
+performance_budget.kpi_average:
+  type: mapping
+  mapping:
+    firstView:
+      type: performance_budget.kpi_view
+    repeatView:
+      type: performance_budget.kpi_view
+
+performance_budget.kpi_view:
+  type: mapping
+  mapping:
+    loadTime:
+      type: integer
+    loadTime_threshold:
+      type: performance_budget.kpi_threshold
+    fullyLoaded:
+      type: integer
+    fullyLoaded_threshold:
+      type: performance_budget.kpi_threshold
+    TTFB:
+      type: integer
+    TTFB_threshold:
+      type: performance_budget.kpi_threshold
+    domElements:
+      type: integer
+    domElements_threshold:
+      type: performance_budget.kpi_threshold
+    SpeedIndex:
+      type: integer
+    SpeedIndex_threshold:
+      type: performance_budget.kpi_threshold
+    render:
+      type: integer
+    render_threshold:
+      type: performance_budget.kpi_threshold
+    requests:
+      type: integer
+    requests_threshold:
+      type: performance_budget.kpi_threshold
+    responses_200:
+      type: integer
+    responses_200_threshold:
+      type: performance_budget.kpi_threshold
+    responses_404:
+      type: integer
+    responses_404_threshold:
+      type: performance_budget.kpi_threshold
+    responses_other:
+      type: integer
+    responses_other_threshold:
+      type: performance_budget.kpi_threshold
+
+performance_budget.kpi_threshold:
+  type: mapping
+  mapping:
+    has_minimum:
+      type: boolean
+    has_maximum:
+      type: boolean
+    minimum:
+      type: integer
+    maximum:
+      type: integer

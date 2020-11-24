@@ -1,0 +1,18 @@
+<footer id="footer" class="t-footer" role="contentinfo">
+  <div class="t-container">
+    <div class="t-footer__menu m-menu--footer">{{ page.menu__footer }}</div>
+    <div class="t-footer__social-copyright">
+      {% if facebook or twitter or instagram or linkedin %}
+      <div class="a-social">
+        <ul class="a-social__list">
+          {% if facebook %}<li class="a-social__list-item"><a href="{{ facebook }}" class="a-social__link" title="Xtheme on Facebook"><span class="a-social__icon fab fa-facebook-f"></span></a></li>{% endif %}
+          {% if twitter %}<li class="a-social__list-item"><a href="{{ twitter }}" class="a-social__link" title="Xtheme on Twitter"><span class="a-social__icon fab fa-twitter"></span></a></li>{% endif %}
+          {% if instagram %}<li class="a-social__list-item"><a href="{{ instagram }}" class="a-social__link" title="Xtheme on Instagram"><span class="a-social__icon fab fa-instagram"></span></a></li>{% endif %}
+          {% if linkedin %}<li class="a-social__list-item"><a href="{{ linkedin }}" class="a-social__link" title="Xtheme on LinkedIn"><span class="a-social__icon fab fa-linkedin"></span></a></li>{% endif %}
+        </ul>
+      </div>
+      {% endif %}
+      <p class="a-copyright">&copy; Xtheme {{ "now"|date("Y") }}</p>
+    </div>
+  </div>
+</footer>

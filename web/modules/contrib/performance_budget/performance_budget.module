@@ -1,0 +1,46 @@
+<?php
+
+/**
+ * @file
+ * Hooks for the performance_budget module.
+ */
+
+use Drupal\performance_budget\Plugin\views\field\WebPageTestFetchResult;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_theme().
+ */
+function performance_budget_theme($existing, $type, $theme, $path) {
+  return [
+    'pb-wpt-history' => [
+      'variables' => [
+        'chartjs_option' => NULL,
+        'first_view_request_summary' => NULL,
+        'repeat_view_request_summary' => NULL,
+      ],
+    ],
+    'pb-wpt-preview' => [
+      'variables' => [
+        'url' => NULL,
+        'from' => NULL,
+        'kpis' => NULL,
+        'view_button' => NULL,
+      ],
+    ],
+    'pb-wpt-full' => [
+      'variables' => [
+        'url' => NULL,
+        'requests' => NULL,
+        'tables' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements function hook_views_pre_render().
+ */
+function performance_budget_views_pre_render(ViewExecutable $view) {
+  WebPageTestFetchResult::preRenderView($view);
+}

@@ -1,0 +1,37 @@
+entity.web_page_archive.pb_wpt_history:
+  path: 'admin/config/system/web-page-archive/jobs/{web_page_archive}/wpt-history'
+  defaults:
+    _controller: '\Drupal\performance_budget\Controller\HistoricalReportController::content'
+    _title_callback: '\Drupal\performance_budget\Controller\HistoricalReportController::title'
+  options:
+    parameters:
+      web_page_archive:
+        type: entity:web_page_archive
+  requirements:
+    _permission: 'administer web page archive'
+
+entity.web_page_archive.pb_wpt_history.process:
+  path: 'admin/config/system/web-page-archive/jobs/{web_page_archive}/wpt-history/process'
+  defaults:
+    _form: '\Drupal\performance_budget\Form\AggregateRunDataForm'
+    _title_callback: '\Drupal\performance_budget\Controller\HistoricalReportController::title'
+  options:
+    parameters:
+      web_page_archive:
+        type: entity:web_page_archive
+  requirements:
+    _permission: 'administer web page archive'
+
+entity.web_page_archive_run.wpt_fetch_results:
+  path: 'admin/config/system/web-page-archive/runs/{web_page_archive_run_revision}/wpt-fetch-results'
+  defaults:
+    _form: '\Drupal\performance_budget\Form\WebPageTestFetchResultForm'
+    _title_callback: '\Drupal\performance_budget\Form\WebPageTestFetchResultForm::title'
+  options:
+    parameters:
+      web_page_archive_run_revision:
+        type: web_page_archive_run_revision
+      delta:
+        type: integer
+  requirements:
+    _permission: 'administer web page archive'

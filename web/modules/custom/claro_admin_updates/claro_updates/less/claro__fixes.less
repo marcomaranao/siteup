@@ -1,0 +1,23 @@
+.dropbutton-wrapper {
+  &.dropbutton-single .dropbutton {padding-right: 0;}
+  .dropbutton {
+    overflow: hidden;
+    padding-right: 3rem;
+    li {margin-right: 0 !important;}
+    &--extrasmall {padding-right: 1.5rem;}
+  }
+  &.open .dropbutton {overflow: visible;}
+  input,
+  a {
+    margin: 0;
+    width: 100%;
+  }
+}
+[class*="paragraphs"] {
+  .tabledrag-handle .handle {display: none;}
+  .form-actions > .form-item[class*="add-more"] {
+    width: 100%;
+    display: block;
+    clear: both;
+  }
+}

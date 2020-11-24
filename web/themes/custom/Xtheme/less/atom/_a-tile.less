@@ -1,0 +1,49 @@
+.a-tile {
+  background-color: @white;
+  border: 1px solid @border--light;
+  .flex-display(inline-flex);
+  .flex-direction(column);
+  .align-items(center);
+  .justify-content(center);
+  padding: 1.5rem;
+  &__icon {
+    color: @black;
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+    .transition(color 0.2s ease-in-out);
+  }
+  &__text {
+    color: @link;
+    hyphens: auto;
+    text-align: center;
+    .transition(color 0.2s ease-in-out);
+    word-break: break-word;
+  }
+  &:hover {
+    text-decoration: none;
+    .a-tile {
+      &__icon {color: @brand--tertiary;}
+      &__text {
+        color: @link--hover;
+        text-decoration: underline;
+      }
+    }
+    &:focus {outline: none;}
+  }
+  &:focus {
+    outline: 2px dashed @focus;
+    outline-offset: 2px;
+    text-decoration: none;
+  }
+  &:active {
+    text-decoration: none;
+    .a-tile {
+      &__icon {color: @brand--tertiary;}
+      &__text {
+        color: @link--active;
+        text-decoration: underline;
+      }
+    }
+    &:focus {outline: none;}
+  }
+}

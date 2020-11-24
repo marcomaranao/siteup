@@ -1,0 +1,9 @@
+
+{% block paragraph %}
+  {% block content %}
+  <a href="{{ content.field_link[0]['#url'] }}" class="a-tile" {{ attributes }}>
+    <span class="a-tile__icon {{ content.field_icon.0 }}" aria-hidden="true"></span>
+    <span class="a-tile__text">{{ content.field_link[0]['#title'] }}</span>
+  </a>
+  {% endblock %}
+{% endblock paragraph %}

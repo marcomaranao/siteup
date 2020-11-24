@@ -1,0 +1,15 @@
+.pb-chartContainer-disabled {
+  opacity: 0.2;
+  position: relative;
+}
+
+.pb-chartContainer-disabled::before {
+  bottom: 0;
+  content: '';
+  left: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  z-index: 999;
+}

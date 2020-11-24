@@ -1,0 +1,43 @@
+
+{%
+  set title_classes = [
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% if label_hidden %}
+  {% if multiple %}
+    <div class="o-related-links">
+        <ul class="o-related-links__list">
+        {% for item in items %}
+          <li class="o-related-links__list-row">
+            {{ item.content }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% else %}
+    {% for item in items %}
+      <div class="o-related-links">
+        <ul class="o-related-links__list">
+        {% for item in items %}
+          <li class="o-related-links__list-row">
+            {{ item.content }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% else %}
+  <div class="o-related-links">
+    <h2 class="o-related-links__label">{{ label }}</h2>
+      <ul class="o-related-links__list">
+      {% for item in items %}
+        <li class="o-related-links__list-row">
+          {{ item.content }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}

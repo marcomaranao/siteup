@@ -1,0 +1,13 @@
+diff --git a/date_recur/src/Plugin/views/row/DateRecurCalendar.php b/date_recur/src/Plugin/views/row/DateRecurCalendar.php
+index c03ba6b9..e3aa198a 100644
+--- a/date_recur/src/Plugin/views/row/DateRecurCalendar.php
++++ b/date_recur/src/Plugin/views/row/DateRecurCalendar.php
+@@ -530,7 +530,7 @@ public function getEventItems($entity, $item_start_date, $item_end_date, $dateTi
+ 
+     // All calendar row plugins should provide a date_id that the theme can use.
+     // @todo implement
+-    $event->date_id = $entity->date_id[0];
++    $event->date_id = current($entity->date_id);
+ 
+     /** @var \Drupal\calendar\CalendarEvent[] $events */
+     $events = $this->explode_values($event);

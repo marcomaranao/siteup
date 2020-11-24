@@ -1,0 +1,98 @@
+chartjs:
+  dependencies:
+    - performance_budget/chartjs-library
+  js:
+    js/chartjs.js: {}
+chartjs-gantt:
+  dependencies:
+    - performance_budget/chartjs-library
+  js:
+    js/chartjs-gantt.js: {}
+chartjs-validate:
+  dependencies:
+    - performance_budget/chartjs
+    - performance_budget/chartjs-plugin-trendline
+    - performance_budget/chartjs-plugin-zoom
+  js:
+    js/chartjs-validate.js: {}
+  css:
+    theme:
+      css/chartjs-validate.css: {}
+chartjs-library:
+  remote: https://cdn.jsdelivr.net/npm/chart.js@2.8.0
+  license:
+    name: 'MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+    gpl-compatible: true
+  dependencies:
+    - performance_budget/momentjs
+  js:
+    https://cdn.jsdelivr.net/npm/chart.js@2.8.0: { type: external, minified: true }
+chartjs-plugin-gantt:
+  remote: https://cdn.jsdelivr.net/npm/chartjs-plugin-gantt@0.9.0/dist/chartjs-plugin-gantt.min.js
+  license:
+    name: 'Apache License 2.0'
+    url: 'https://opensource.org/licenses/Apache-2.0'
+    gpl-compatible: true
+  dependencies:
+    - performance_budget/chartjs-library
+  js:
+    https://cdn.jsdelivr.net/npm/chartjs-plugin-gantt@0.9.0/dist/chartjs-plugin-gantt.min.js: { type: external, minified: true }
+chartjs-plugin-trendline:
+  remote: https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline@0.1.2/src/chartjs-plugin-trendline.min.js
+  license:
+    name: 'MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+    gpl-compatible: true
+  dependencies:
+    - performance_budget/chartjs-library
+  js:
+    https://cdn.jsdelivr.net/npm/chartjs-plugin-trendline@0.1.2/src/chartjs-plugin-trendline.min.js: { type: external, minified: true }
+chartjs-plugin-zoom:
+  remote: https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.3
+  license:
+    name: 'MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+    gpl-compatible: true
+  dependencies:
+    - performance_budget/chartjs-library
+    - performance_budget/hammerjs
+  js:
+    https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@0.7.3: { type: external, minified: true }
+google-charts:
+  remote: https://www.gstatic.com/charts/loader.js
+  license:
+    name: 'Apache 2.0'
+    url: 'http://www.apache.org/licenses/LICENSE-2.0'
+    gpl-compatible: false
+  js:
+    https://www.gstatic.com/charts/loader.js: { type: external, minified: true }
+    js/gchart.js: {}
+google-charts-validate:
+  dependencies:
+    - performance_budget/google-charts
+  js:
+    js/gchart-validate.js: {}
+  css:
+    theme:
+      css/gchart-validate.css: {}
+request-table:
+  css:
+    theme:
+      css/request-table.css: {}
+hammerjs:
+  remote: https://cdn.jsdelivr.net/npm/hammerjs@2.0.8
+  license:
+    name: 'MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+    gpl-compatible: true
+  js:
+    https://cdn.jsdelivr.net/npm/hammerjs@2.0.8: { type: external, minified: true }
+momentjs:
+  remote: https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
+  license:
+    name: 'MIT license'
+    url: 'https://opensource.org/licenses/MIT'
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js: { type: external, minified: true }

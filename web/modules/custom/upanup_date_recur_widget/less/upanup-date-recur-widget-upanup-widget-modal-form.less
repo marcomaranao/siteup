@@ -1,0 +1,30 @@
+@import "_mixins.less";
+/** Drupal doesnt have CSS for date/time fields in Seven. See form.css
+https://www.drupal.org/project/drupal/issues/2976404
+*/
+.form-disabled {
+  input.form-date,input.form-time {
+    border-color: @grey;
+    background-color: @grey--light;
+    box-shadow:none;
+  }
+}
+
+.upanup-date-recur-widget-upanup-modal {
+  input {
+    &[name="interval"],
+    &[name="ends_count"] {width: 6em;}
+  }
+  .ends {
+    display: flex;
+    flex-direction: column;
+    .ends-row {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      .ends-row-label {width: 20%;}
+      .ends-row-field {width: 80%;}
+    }
+  }
+  .container-inline.weekdays label:after {content:'';}
+}

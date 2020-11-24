@@ -1,0 +1,31 @@
+.a-search-trigger {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: @text-color;
+  font-family: @body;
+  margin: 0;
+  padding: 0;
+  .transition(color 0.2s ease-in-out);
+  &__text {
+    margin-right: 0.823rem;
+  }
+  &__icon {
+    color: @brand--secondary;
+    font-size: 1.294rem;
+    .transition(color 0.2s ease-in-out);
+  }
+  &:hover,
+  &:active {
+    color: @link--hover;
+    text-decoration: none;
+    .a-search-trigger {
+      &__text {text-decoration: underline;}
+      &__icon {color: @link--hover;}
+    }
+  }
+  &:focus {
+    outline: 2px dashed @focus;
+    outline-offset: 2px;
+  }
+}

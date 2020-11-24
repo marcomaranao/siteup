@@ -1,0 +1,23 @@
+{
+  "name": "drupal/automatic_updates",
+  "type": "drupal-module",
+  "description": "Drupal Automatic Updates",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/automatic_updates",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/automatic_updates",
+    "source": "http://cgit.drupalcode.org/automatic_updates"
+  },
+  "require": {
+    "ext-json": "*",
+    "ext-zip": "*",
+    "drupal/php-signify": "^1.0@dev"
+  },
+  "config": {
+    "platform": {
+      "php": "5.6.0"
+    }
+  }
+}

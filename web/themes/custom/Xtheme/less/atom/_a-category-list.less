@@ -1,0 +1,30 @@
+.a-category-list {
+  .flex-display;
+  .flex-direction(row);
+  .flex-wrap(wrap);
+  .align-items(center);
+  .justify-content(flex-start);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  &__item {
+    .flex(0 0 auto);
+    margin: 0 1rem 1rem 0;
+    padding: 0;
+  }
+  &__button {
+    &--selected {
+      background-color: @link--hover;
+      border-color: @link--hover;
+      color: @white;
+      &:hover {
+        background-color: @link;
+        border-color: @link;
+      }
+      &:active {
+        background-color: @link--active;
+        border-color: @link--active;
+      }
+    }
+  }
+}

@@ -1,0 +1,5 @@
+name: 'Claro admin updates'
+description: 'Adds toolbar styling and fixes some issues in our base state.'
+type: module
+core: 8.x
+version: ' 8.x-1.0'

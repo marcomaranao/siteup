@@ -1,0 +1,14 @@
+name: Search File Attachments
+description: Makes the content of attached files searchable.
+type: module
+# core: 8.x
+package: Search
+configure: search_file_attachments.admin
+dependencies:
+  - search
+
+# Information added by Drupal.org packaging script on 2017-01-08
+version: '8.x-1.1'
+core: '8.x'
+project: 'search_file_attachments'
+datestamp: 1483904044

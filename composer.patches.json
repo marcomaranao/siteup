@@ -1,0 +1,21 @@
+{
+  "patches": {
+      "drupal/date_recur": {
+        "Add feeds target": "https://www.drupal.org/files/issues/2019-04-23/add-feeds-target-3050030-1.patch",
+        "Fix date recur in calendar": "patches/2820803-date-recur_calendar-integration-18.patch"
+      },
+      "drupal/calendar": {
+        "Date recur-calendar integration" : "patches/2820803-calendar-date_recur-integration-18.patch"
+      },
+      "drupal/core": {
+          "Fix for tabledrag (multiple handles) in Claro": "patches/claro-tabledrag.patch",
+          "Instance null fix": "patches/request-instance-null-fix.patch"
+      },
+      "drupal/cookieconsent": {
+          "A11y fixes": "patches/cookieconsent-a11y.patch"
+      },
+      "drupal/linkit_media_library": {
+        "Remove blank target": "patches/linkit-media-remove-target.patch"
+      }
+  }
+}

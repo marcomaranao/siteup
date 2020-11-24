@@ -1,0 +1,18 @@
+.pb-requestTable {
+  margin-bottom: 50px;
+}
+
+.pb-requestTableCaption {
+  display: block;
+  margin-bottom: 15px;
+  word-break: break-all;
+}
+
+.pb-requestTableTotal {
+  font-weight: bold;
+}
+
+.pb-requestTableUrl {
+  width: 50%;
+  word-break: break-all;
+}

@@ -1,0 +1,6 @@
+name: Typed Data Global Context Test
+type: module
+description: 'Provides a simple global context for testing.'
+core_version_requirement: ^8 || ^9
+dependencies:
+  - typed_data:typed_data

@@ -1,0 +1,27 @@
+<div{{ attributes }}>
+  <fieldset class="upanup-date-recur-widget-fieldset fieldset">
+    {{ '<legend class="fieldset__legend fieldset__label">Date(s)</legend>'|t }}
+    <div class="fieldset__wrapper">
+      <div class="upanup-date-recur-widget-upanup-widget-day">
+        {% spaceless %}
+        <div class="upanup-date-recur-widget-upanup-widget-day__start">
+          {{ widget.day_start }}
+          {{ widget.time_start }}
+        </div>
+        <div class="upanup-date-recur-widget-upanup-widget-day__end">
+          {{ widget.day_end }}
+          {{ widget.time_end }}
+          {{ widget.time_zone }}
+        </div>
+        {% endspaceless %}
+      </div>
+      {{ widget.is_all_day }}
+      {# Hid recurrence option until display in calendar is fixed #}
+      {# <div class="upanup-date-recur-widget-upanup-widget-recurrences">
+        {{ '<h4>Recurrences</h4>'|t }}
+        {{ widget.recurrence_option }}
+      </div> #}
+    </div>
+  </fieldset>
+  {{ widget.buttons }}
+</div>

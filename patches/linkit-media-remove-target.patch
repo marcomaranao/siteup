@@ -1,0 +1,12 @@
+diff --git a/src/LinkitMediaLibraryEditorOpener.php b/src/LinkitMediaLibraryEditorOpener.php
+index 51102d310..1f0fd07f7 100644
+--- a/src/LinkitMediaLibraryEditorOpener.php
++++ b/src/LinkitMediaLibraryEditorOpener.php
+@@ -75,7 +75,6 @@ public function getSelectionResponse(MediaLibraryState $state, array $selected_i
+         'data-entity-substitution' => 'media',
+         'data-entity-uuid' => $selected_media->uuid(),
+         'href' => '/media/' . $selected_media->id(),
+-        'target' => '_blank',
+       ],
+     ];
+     $response->addCommand(new EditorDialogSave($values));

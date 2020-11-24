@@ -1,0 +1,6 @@
+claro_updates:
+  version: 1.x
+  css:
+    theme:
+      claro_updates/css/claro__fixes.css: {weight:1}
+      claro_updates/css/claro__toolbar.css: {weight:1}

@@ -1,0 +1,12 @@
+# OS specific
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+*~
+*.swp
+*.swo
+
+# Composer
+/vendor/

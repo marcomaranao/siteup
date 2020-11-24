@@ -1,0 +1,14 @@
+services:
+  performance_budget.web_page_test_event_subscriber:
+    class: Drupal\performance_budget\EventSubscriber\WebPageTestEventSubscriber
+    tags:
+      - { name: event_subscriber }
+
+  performance_budget.helper.kpi:
+    class: Drupal\performance_budget\Helper\KpiHelper
+    tags:
+      - { name: helper }
+
+  performance_budget.key_provider:
+    class: Drupal\performance_budget\KeyProvider
+    arguments: ['@?key.repository']

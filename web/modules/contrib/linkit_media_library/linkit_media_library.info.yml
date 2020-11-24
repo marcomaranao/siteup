@@ -1,0 +1,13 @@
+name: Linkit Media Library
+type: module
+description: 'Create links from media library.'
+core_version_requirement: ^8 || ^9
+
+dependencies:
+  - linkit:linkit
+  - drupal:media_library
+
+# Information added by Drupal.org packaging script on 2020-07-23
+version: '1.0.1'
+project: 'linkit_media_library'
+datestamp: 1595539130

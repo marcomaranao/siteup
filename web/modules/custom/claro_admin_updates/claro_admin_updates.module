@@ -1,0 +1,6 @@
+<?php
+function claro_admin_updates_preprocess_page(&$variables) {
+  if(\Drupal::currentUser()->id() != null) {
+    $variables['#attached']['library'][] = 'claro_admin_updates/claro_updates';
+  }
+}

@@ -1,0 +1,37 @@
+#required mappings
+name: Xtheme
+description: Upanup starter theme
+type: theme
+core: 8.x
+# Defines the base theme
+base theme: classy
+
+regions:
+  alerts: 'Alerts'
+  logo: 'Logo'
+  menu: 'Menu'
+  menu__header: 'Menu -- header'
+  search: 'Search form'
+  carousel: 'Carousel'
+  sidebar: 'Sidebar'
+  content: 'Content'
+  breadcrumbs: 'Breadcrumbs'
+  menu__footer: 'Menu -- footer'
+  highlighted: 'Highlighted'
+  help: 'help'  
+  
+libraries:
+  - xtheme/global
+  - xtheme/fonts
+
+ckeditor_stylesheets:
+  - https:///fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Montserrat:400,700
+  - css/ckeditor.styles.css
+  
+#Remove a CSS File
+stylesheets-remove:
+  - '@classy/css/components/breadcrumb.css'
+  - '@classy/css/components/button.css'
+  - '@classy/css/components/menu.css'
+  - '@classy/css/components/pager.css'
+  - '@classy/css/components/tabs.css'

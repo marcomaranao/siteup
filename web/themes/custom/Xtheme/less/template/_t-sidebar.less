@@ -1,0 +1,13 @@
+.t-sidebar {
+  float: left;
+  margin: 0;
+  padding-right: 5rem;
+  padding-top: 3rem;
+  width: calc(33.333% + 2.5rem);
+  .region > * {margin-bottom: 2rem;}
+  &--hidden,
+  &--no-nav {display: none;}
+}
+@media only screen and (max-width:1024px) {
+  .t-sidebar {display: none;}
+}

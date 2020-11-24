@@ -1,0 +1,6 @@
+entity.wpt_kpi.collection:
+  title: 'Web Page Test KPI Groups'
+  description: 'KPI groups for webpagetest.org.'
+  base_route: entity.web_page_archive.collection
+  route_name: entity.wpt_kpi.collection
+  weight: 95

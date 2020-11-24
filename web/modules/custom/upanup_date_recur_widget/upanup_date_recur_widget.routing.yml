@@ -1,0 +1,7 @@
+upanup_date_recur_widget_widget.upanup_modal_form:
+  path: '/upanup-date-recur-widget/upanup-modal-form'
+  defaults:
+    _form: '\Drupal\upanup_date_recur_widget\Form\UpanupDateRecurWidgetUpanupModalForm'
+  requirements:
+    _permission: 'upanup_date_recur_widget use upanup form'
+    

@@ -1,0 +1,16 @@
+{% block paragraph %}
+  {% block content %}
+  <figure class="m-carousel-slide">
+    {{ content.field_image.0 }}
+    {% if content.field_slide_heading.0 or content.field_slide_content.0 or content.field_link[0]['#url'] %}
+    <figcaption class="m-carousel-slide__content-wrapper">
+      <div class="t-container">
+        {% if content.field_slide_heading.0 %}<h2 class="m-carousel-slide__heading">{{ content.field_slide_heading.0 }}</h2>{% endif %}
+        {% if content.field_slide_content.0 %}<p class="m-carousel-slide__content">{{ content.field_slide_content.0 }}</p>{% endif %}
+        {% if content.field_link[0]['#url'] %}<a href="{{ content.field_link[0]['#url'] }}" class="m-carousel-slide__link a-button">{{ content.field_link[0]['#title'] }}</a>{% endif %}
+      </div>
+    </figcaption>
+    {% endif %}
+  </figure>
+  {% endblock content %}
+{% endblock paragraph %}
